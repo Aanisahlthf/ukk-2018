@@ -8,18 +8,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Travelnesia</title>
+    <title>Clean Blog - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/clean-blog.min.css" rel="stylesheet">
 
   </head>
 
@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">About Me</a>
+        <a class="navbar-brand" href="<?php echo base_url();?>">Airplane Ticket</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -45,7 +45,7 @@
               <a class="nav-link" href="post.html">Reservation</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Login</a>
+              <a class="nav-link" href="<?php echo base_url(); ?>login">Login</a>
             </li>
           </ul>
         </div>
@@ -53,13 +53,13 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('<?php echo base_url();?>assets/img/pesawat-2.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="page-heading">
-              <h1>About Me</h1>
+            <div class="site-heading">
+              <h1>Airplane Ticket</h1>
               <span class="subheading"></span>
             </div>
           </div>
@@ -71,9 +71,56 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p></p>
-          <p></p>
-          <p></p>
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+              </h2>
+              <h3 class="post-subtitle">
+              </h3>
+            </a>
+            <p class="post-meta">
+              <a href="#"></a>
+              </p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+              </h2>
+            </a>
+            <p class="post-meta">
+              <a href="#"></a>
+              </p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+              </h2>
+              <h3 class="post-subtitle">
+              </h3>
+            </a>
+            <p class="post-meta">
+              <a href="#"></a>
+              </p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+              </h2>
+              <h3 class="post-subtitle">
+              </h3>
+            </a>
+            <p class="post-meta">
+              <a href="#"></a>
+              </p>
+          </div>
+          <hr>
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
@@ -111,18 +158,18 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Travelnesia 2018</p>
+            <p class="copyright text-muted">Copyright &copy; Airplane Ticket 2018</p>
           </div>
         </div>
       </div>
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/clean-blog.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/clean-blog.min.js"></script>
 
   </body>
 
