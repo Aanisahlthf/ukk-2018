@@ -11,14 +11,15 @@ class Welcome extends CI_Controller {
 	function index(){
 
 		if (!isset($_SESSION['username'])) {
-			$this->load->view('');
+			redirect('Login');
 		} else {
-			redirect('');
+			
+			$this->main();
 		}
 	}
 	
-	public function index()
+	public function main()
 	{
-		$this->load->view('home');
+		$this->load->view('beranda');
 	}
 }

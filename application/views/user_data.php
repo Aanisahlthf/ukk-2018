@@ -22,7 +22,7 @@
 			<td><?php echo $row->username ?></td>
 			<td><?php echo $row->password ?></td>
 			<td><?php echo $row->level ?></td>
-			<td><a href="<?php echo base_url('Users/del/'.$row->id);?>"> Hapus</a> | Edit</td>
+			<td><a href="<?php echo base_url('Users/del/'.$row->id);?>"> Hapus</a> | <a href="<?php echo base_url('edituser/index/'.$row->id);?>">Edit</a></td>
 		</tr>
 		<?php
 		}
