@@ -14,12 +14,8 @@ class Welcome extends CI_Controller {
 			redirect('Login');
 		} else {
 			
-			$this->main();
+			$this->load->view('beranda');
 		}
 	}
 	
-	public function main()
-	{
-		$this->load->view('beranda');
-	}
 }

@@ -34,12 +34,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<h1 class="header-w3ls">
 		Flight Booking Form</h1>
 		<div class="appointment-w3">
-			<form action="<?php echo base_url('reservation/prosestambah'); ?>" method="post">
+			<form action="<?php echo base_url('reservation/editproses'); ?>" method="post">
+				<?php foreach($editdata as $row): ?>
 				<div class="personal">
 					<h2>Personal Details</h2>
 					<div class="main">
 						<div class="form-left-w3l">
-
+							<input type="hidden" name="id" value="<?php echo $row->id; ?>">
 							<input type="text" class="top-up" name="name" placeholder="Name" required="">
 						</div>
 						<div class="form-right-w3ls ">
@@ -67,48 +68,48 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="main">
 						<div class="form-left-w3l">
 
-							<input type="text" class="top-up" name="reservationcode" placeholder="Reservation Code" required="">
+							<input type="text" class="top-up" name="reservationcode" placeholder="Reservation Code" required="" value="<?php echo $row->reservation_code; ?>">
 						</div>
 						<div class="form-right-w3ls ">
 
-							<input type="text" class="top-up" name="reservationat" placeholder="Reservation At" required="">
+							<input type="text" class="top-up" name="reservationat" placeholder="Reservation At" required="" value="<?php echo $row->reservation_at;?>">
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="main">
 						<div class="form-left-w3l">
 
-							<input type="text" id="datepicker1" class="top-up" name="reservationdate" placeholder="Reservation Date" required="">
+							<input type="text" id="datepicker1" class="top-up" name="reservationdate" placeholder="Reservation Date" required="" value="<?php echo $row->reservation_date; ?>">
 						</div>
 						<div class="form-right-w3ls ">
 
-							<input type="text" class="top-up" name="seatcode" placeholder="Seat Code" required="">
+							<input type="text" class="top-up" name="seatcode" placeholder="Seat Code" required="" value="<?php echo $row->seat_code; ?>">
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="main">
 						<div class="form-left-w3l">
 
-							<input type="text" class="top-up" name="customerid" placeholder="Customer Id" required="">
+							<input type="text" class="top-up" name="customerid" placeholder="Customer Id" required="" value="<?php echo $row->customer_id; ?>">
 						</div>
 						<div class="form-right-w3ls ">
 
-							<input type="text" class="top-up" name="ruteid" placeholder="Rute Id" required="">
+							<input type="text" class="top-up" name="ruteid" placeholder="Rute Id" required="" value="<?php echo $row->rute_id; ?>">
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="main">
 						<div class="form-left-w3l">
-							<input type="text" id="timepicker" class="timepicker form-control hasWickedpicker" name="departat" placeholder="Depart At" required="">
+							<input type="text" id="timepicker" class="timepicker form-control hasWickedpicker" name="departat" placeholder="Depart At" required="" value="<?php echo $row->depart_at; ?>">
 						</div>
 						<div class="form-right-w3ls ">
-							<input type="text" class="top-up" name="userid" placeholder="User Id" required="">
+							<input type="text" class="top-up" name="userid" placeholder="User Id" required="" value="<?php echo $row->user_id; ?>">
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="main">
 						<div class="form-left-w3l">
-							<input type="text" class="top-up" name="price" placeholder="Price" required="">
+							<input type="text" class="top-up" name="price" placeholder="Price" required="" value="<?php echo $row->price; ?>">
 						</div>
 						<div class="form-right-w3ls ">
 							
@@ -119,6 +120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="btnn">
 						<input type="submit" value="Submit">
 					</div>
+				<?php endforeach; ?>
 				</form>
 			</div>
 			<div class="copy">

@@ -31,16 +31,17 @@ class Login extends CI_Controller
 		$dolog = $this->user_m->cek_login('user', $procdata)->num_rows();
 
 		if ($dolog > 0) {
-			# code...
 			$data_session = array(
 				'username' => $username,
 				'status' => 'login'
 				);
 			$this->session->set_userdata($data_session);
-			redirect('welcome');
+			redirect('Welcome');
 		}else{
 			echo "Username dan password salah";
 		}
+
+		redirect("admin");
 
 	}
 }

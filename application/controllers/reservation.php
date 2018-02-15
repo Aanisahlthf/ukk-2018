@@ -7,6 +7,7 @@ class reservation extends CI_Controller {
 		$this->load->model('m_cari');
 		$this->load->model('m_data');
 		$this->load->model('reservation_m');
+		$this->load->helper('date');
 	}
 
 	function index(){
@@ -19,8 +20,8 @@ class reservation extends CI_Controller {
 		$email = $this->input->post('email');
 		$phonenumber = $this->input->post('phonenumber');
 		$reservationcode = $this->input->post('reservationcode');
-		$reservationat = $this->input->post('reservationat');
-		$reservationdate = $this->input->post('reservationdate');
+		$reservationat = date('Y-m-d');
+		$reservationdate = date('Y-m-d', strtotime($this->input->post('reservationdate')));
 		$seatcode = $this->input->post('seatcode');
 		$customerid = $this->input->post('customerid');
 		$ruteid = $this->input->post('ruteid');
@@ -30,6 +31,7 @@ class reservation extends CI_Controller {
 		$dataproses = array(
 			'reservation_code'=>$reservationcode,
 			'reservation_at'=>$reservationat,
+			'reservation_date'=>$reservationdate,
 			'seat_code'=>$seatcode,
 			'customer_id'=>$customerid,
 			'rute_id'=>$ruteid,
@@ -38,6 +40,8 @@ class reservation extends CI_Controller {
 			'user_id'=>$userid,
 		);
 		$this->reservation_m->add($dataproses);
+		// var_dump($reservationdate);
+		redirect('reservation');
 	}
 
 	function search()
@@ -53,5 +57,47 @@ class reservation extends CI_Controller {
 		$data['tb_rute'] = $this->m_cari->search($s)->result();
 		$data['rute'] = $this->m_data->tampil_data_rute()->result();
 		$this->load->view('v_hasil_pencarian',$data);
+	}
+
+	function tampildata()
+	{
+		$data['reservation'] = $this->reservation_m->gets()->result();
+		$this->load->view('tampil_reservation',$data);
+	}
+
+	function editdata($id)
+	{
+		$data['editdata'] = $this->reservation_m->edit($id)->result();
+		$this->load->view('edit_reservation',$data);
+	}
+
+	function hapusdata($id)
+	{
+		$this->reservation_m->delete($id);
+		redirect('reservation');
+	}
+
+	function editproses()
+	{
+		$id = $this->input->post('id');
+		$reservationdate = date('Y-m-d', strtotime($this->input->post('reservationdate')));
+		$seatcode = $this->input->post('seatcode');
+		$customerid = $this->input->post('customerid');
+		$ruteid = $this->input->post('ruteid');
+		$departat = $this->input->post('departat');
+		$price = $this->input->post('price');
+		$userid = $this->input->post('userid');
+		$dataproses = array(
+			'reservation_code'=>$reservationcode,
+			'reservation_date'=>$reservationdate,
+			'seat_code'=>$seatcode,
+			'customer_id'=>$customerid,
+			'rute_id'=>$ruteid,
+			'depart_at'=>$departat,
+			'price'=>$price,
+			'user_id'=>$userid,
+		);
+		$this->reservation_m->update($id, $dataproses);
+		redirect('reservation/tampildata');
 	}
 }

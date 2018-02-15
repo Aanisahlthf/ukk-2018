@@ -77,7 +77,7 @@
             Log in
           </h2>
           <h6 class="post-subtitle">
-            <form action="Login/action" method="POST">
+            <form action="<?php echo base_url()?>login/action" method="POST">
               <table>
                 <tr>
                   <td>Username</td>
